@@ -247,7 +247,8 @@ bool do_exec_redirect(const char *outputfile, int count, ...)
 
     // forking and wait
     pid_child = fork();
-    fd_redirection = open(outputfile, O_WRONLY | O_TRUNC | O_CREAT, 0644);
+    //fd_redirection = open(outputfile, O_WRONLY | O_TRUNC | O_CREAT, 0644);
+    fd_redirection = open(outputfile, O_WRONLY);
 
     if (fd_redirection < 0)
     {
